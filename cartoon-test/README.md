@@ -20,5 +20,7 @@ npm run build
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+npm i axios --save
+npm i vuex --save
+npm i -S flipbook-vue
+npm install bulma

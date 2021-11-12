@@ -1,0 +1,55 @@
+.home__title {
+    font-family: "cartoon_font", sans-serif;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.home__subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    border-bottom: 2px solid gray;
+    border-top: 2px solid gray;
+    margin: 0 10px 13px 10px;
+    font-style: italic;
+}
+
+.home__button-more {
+    text-align: center;
+    margin-top: 1em;
+    button {
+        font-style: italic;
+        border: 2px solid gray;
+        font-weight: 700;
+        &:hover {
+            background-color: #bfbfbf;
+        }
+    }
+}
+
+.home__column-news {
+    margin-right: 10px;
+    border-left: 2px solid gray;
+    margin-top: 5px;
+    .title {
+        text-align: center;
+        font-size: 1.3rem;
+    }
+    div {
+        border-top: 2px solid gray;
+        margin-top: 1rem;
+        .title {
+            margin-top: 1rem;
+        }
+    }
+}
+
+.home__column-cartoons {
+    margin-left: 10px;
+    .title {
+        text-align: center;
+        font-size: 1.3rem;
+    }
+    .content {
+        text-align: center;
+    }
+}
