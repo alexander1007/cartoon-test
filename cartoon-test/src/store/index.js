@@ -14,6 +14,7 @@ export default new Vuex.Store({
         SET_CARTOON(state, payload) {
             const newCartoon = payload;
             newCartoon.active = false;
+            newCartoon.rate = 0;
             state.cartoons.push(newCartoon);
         },
         CHANGE_ACTIVE(state, payload) {
@@ -21,6 +22,9 @@ export default new Vuex.Store({
         },
         RESET_CARTOONS(state) {
             state.cartoons = [];
+        },
+        SET_CHOOSE_RATE(state, payload) {
+            state.cartoons[payload.index].rate = payload.chooseRate;
         }
     },
     actions: {
@@ -68,6 +72,9 @@ export default new Vuex.Store({
         },
         resetAllCartoons({ commit }) {
             commit('RESET_CARTOONS');
+        },
+        setRatingCartoon({ commit }, payload) {
+            commit('SET_CHOOSE_RATE', payload)
         }
     },
     modules: {},

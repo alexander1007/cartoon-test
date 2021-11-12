@@ -2,7 +2,7 @@
   <div>
     <div>
       <h1 class="home__title">Masiv´s Newspaper</h1>
-      <p class="home__subtitle">Monday</p>
+      <p class="home__subtitle">{{currentDate()}}</p>
     </div>
     <div class="columns is-desktop">
       <div class="column is-8 home__column-cartoons">
@@ -49,11 +49,12 @@
 // @ is an alias to /src
 import Book from "@/components/Book.vue";
 import { mapActions, mapState } from "vuex";
+import dayjs from 'dayjs'
 
 export default {
   name: "Home",
   components: {
-    Book,
+    Book,    
   },
   mounted() {
     this.random();
@@ -74,6 +75,11 @@ export default {
         });
       }
     },
+    currentDate(){
+      const current = new Date();
+      const date = dayjs(current).format('dddd, MMM. D, YYYY');      
+      return date;
+    }
   },
 };
 </script>

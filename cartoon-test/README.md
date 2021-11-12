@@ -22,5 +22,6 @@ npm run lint
 
 npm i axios --save
 npm i vuex --save
-npm i -S flipbook-vue
-npm install bulma
+npm i bulma
+npm i dayjs
+npm i vue-star-rating
