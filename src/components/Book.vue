@@ -13,7 +13,7 @@
         <div class="label book__rating box__hover">
           <div v-if="item.active" class="stars">
             <star-rating
-              v-model="rating"
+              v-model="rate"
               :increment="1"
               :max-rating="5"
               inactive-color="#ffffff"
@@ -52,19 +52,27 @@ export default {
   },
   data() {
     return {
-      rating: 0,
+    
     };
   },
   computed: {
-    ...mapState(["cartoons"]),
+    ...mapState(["cartoons", "rating"]),
+    rate: {
+      get() {
+        return this.rating;
+      },
+      set(val) {
+        this.setRate(val);
+      }
+    }
   },
   methods: {
-    ...mapActions(["setActiveAll", "setRatingCartoon"]),
+    ...mapActions(["setActiveAll", "setRatingCartoon","setRate"]),
     setRating(index) {
       this.setRatingCartoon({ index, chooseRate: this.rating });
     },
     setActive(index, item) {
-      this.rating = item.rate;
+      this.rate = item.rate;
       this.setActiveAll(index);
     },
   },

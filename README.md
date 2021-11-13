@@ -2,8 +2,18 @@
 
 ## Project setup
 ```
-npm install
+npm i
 ```
+## Installed plugins
+npm i axios --save
+
+npm i vuex --save
+
+npm i bulma --save
+
+npm i dayjs --save
+
+npm i vue-star-rating --save
 
 ### Compiles and hot-reloads for development
 ```
@@ -20,8 +30,3 @@ npm run build
 npm run lint
 ```
 
-npm i axios --save
-npm i vuex --save
-npm i bulma
-npm i dayjs
-npm i vue-star-rating

@@ -9,6 +9,7 @@ export default new Vuex.Store({
         cartoons: [],
         maxLimitNumberCartoon: 2539,
         quantityCartoonsLoad: 5,
+        rating: 0,
     },
     mutations: {
         SET_CARTOON(state, payload) {
@@ -25,12 +26,17 @@ export default new Vuex.Store({
         },
         SET_CHOOSE_RATE(state, payload) {
             state.cartoons[payload.index].rate = payload.chooseRate;
+        },
+        SET_RATING(state, payload) {
+            state.rating = payload;
         }
     },
     actions: {
         getCartoon({
-            commit
+            commit,
+            dispatch
         }, payload) {
+            dispatch('setRate', 0);
             return new Promise((res, rej) => {
                 axios.post('https://api-cartoon-test.herokuapp.com', {
                         cartoon: payload
@@ -75,6 +81,9 @@ export default new Vuex.Store({
         },
         setRatingCartoon({ commit }, payload) {
             commit('SET_CHOOSE_RATE', payload)
+        },
+        setRate({ commit }, payload) {
+            commit('SET_RATING', payload);
         }
     },
     modules: {},
